@@ -36,7 +36,7 @@ export default function renderCountry(dataCountries){
     <p class="text"><b>Population:</b> ${el.population}</p>
     <p class="text"><b>Languages:</b> ${Object.values(el.languages)}</p>`;
     })
-    .join('');
+    .join(',');
     countryInfoDiv.innerHTML = markup;
  }
 }
