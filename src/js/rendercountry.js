@@ -25,6 +25,7 @@ export default function renderCountry(dataCountries){
     countryListUl.innerHTML = countryArr;
     
  } else {
+   console.log('asdasdasdasdas');
     countryListUl.innerHTML = '';
     const markup = dataCountries
     .map(el => {
@@ -34,9 +35,10 @@ export default function renderCountry(dataCountries){
     <span class ="title__cauntry">${el.name.official}</span></div>
     <p class="text"><b>Capital:</b> ${el.capital}</p>
     <p class="text"><b>Population:</b> ${el.population}</p>
-    <p class="text"><b>Languages:</b> ${Object.values(el.languages)}</p>`;
+    <p class="text"><b>Languages:</b> ${Object.values(el.languages).join(', ')}</p>`;
     })
-    .join(',');
+    .join('');
     countryInfoDiv.innerHTML = markup;
+    
  }
 }
